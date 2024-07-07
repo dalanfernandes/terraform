@@ -1,11 +1,7 @@
 provider "aws" {
   region = "us-east-1"
 }
-data "archive_file" "lambda_zip" {
-  type        = "zip"
-  source_dir  = "code"
-  output_path = "${path.module}/blank1.zip"
-}
+
 resource "aws_lambda_function" "example1" {
   function_name = "test-s-lambda"
 
